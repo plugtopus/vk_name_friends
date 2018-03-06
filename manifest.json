@@ -20,7 +20,7 @@
    "options_page": "html/options.html",
    "permissions": [ "contextMenus", "storage", "tabs", "*://*/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "2018.03.05.1",
+   "version": "2018.03.06.1",
    "web_accessible_resources": [ "core/*.*", "img/*.*", "html/*.*" ],
    "author": "Plugtopus Agency",
    "homepage_url": "https://plugtopus.agency"
