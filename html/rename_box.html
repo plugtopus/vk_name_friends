@@ -1,0 +1,70 @@
+<div class="box_layout">
+    <div class="box_title_wrap" style="">
+        <div class="box_x_button" aria-label="Закрыть" tabindex="0" role="button" onclick="__bq.hideLast(false);"></div>
+        <div class="box_title_controls"></div>
+        <div class="box_title">Изменить имя</div>
+    </div>
+    <div class="box_body box_no_buttons" style="display: block; padding: 0px; border: 0px;">
+        <div class="mail_box_cont">
+            <div class="mail_box_to_single">
+                <div class="clear_fix mailbox_hidden_override" id="mail_box_dd">
+                    <div class="fl_r wdd_arr hidden_override"></div>
+                    <input type="text" class="wdd_text fl_l hidden_override" placeholder="" id="mail_box_inp"
+                           style="display: none;">
+                    <div class="fl_l">
+                        <a class="mail_box_single_ava" href="/{{targetId}}" onmousedown="aug(event); ">
+                            <img class="mail_box_single_ava_img" src="{{avatar}}">
+                        </a>
+                    </div>
+                    <div class="fl_l mail_box_sinlgle_recepient_info">
+                        <a href="/{{targetId}}" class="mail_box_label_peer" onmousedown="aug(event); ">{{value}}</a>
+                        <p class="mail_box_group_first_message"></p>
+                    </div>
+                </div>
+            </div>
+            <div id="mail_box_error" style="padding: 0px 0px 9px;" class="mail_box_label"></div>
+            <div class="mail_box_text_wrap">
+                <div style="min-height: 30px; height: 30px; width: 250px" tabindex="0" contenteditable="true"
+                     id="mail_box_editable" onkeyup="" onkeypress="" onchange="">{{value}}
+                </div>
+            </div>
+            <div id="rename_box_controls">
+                <div class="fl_l button_blue mail_box_send_btn">
+                    <button id="rename_box_send"
+                            onclick="var value=document.getElementById('mail_box_editable').textContent; var publishOwnWall=document.getElementById('my_wall_publishing').value; var publishTargetWall=document.getElementById('friend_wall_publishing').value; if (value.length>0 && value.length<=25) {renameFriend(event, '{{ownId}}', '{{targetId}}', '{{ownAlias}}', '{{targetAlias}}', value, publishOwnWall, publishTargetWall, '{{name}}'); curBox().hide();} else {document.getElementById('mail_box_error').innerHTML='Новое имя слишком длинное либо слишком короткое';}">
+                        Изменить имя
+                    </button>
+                    <button id="rename_box_reset"
+                            onclick="clearFriend(event, '{{targetId}}', '{{targetAlias}}'); curBox().hide();">
+                        Восстановить
+                    </button>
+                </div>
+                <br class="clear"/>
+                <div style="margin-top: 10px;">
+                    <table style="width:100%">
+                        <tr>
+                            <td>Пост на моей стене</td>
+                            <td>
+                                <select id="my_wall_publishing">
+                                    <option {{mwnp}} value="mwnp">Не публиковать</option>
+                                    <option {{mwnn}} value="mwnn">Скрыть имя</option>
+                                    <option {{mwsn}} value="mwsn">Показать имя</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Пост на стене друга</td>
+                            <td>
+                                <select id="friend_wall_publishing">
+                                    <option {{fwnp}} value="fwnp">Не публиковать</option>
+                                    <option {{fwnn}} value="fwnn">Скрыть имя</option>
+                                    <option {{fwsn}} value="fwsn">Показать имя</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
